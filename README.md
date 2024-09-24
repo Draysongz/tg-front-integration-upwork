@@ -1,93 +1,223 @@
-# tg-front-integration-upwork
+# Telegram Mini Apps React Template
 
+This template demonstrates how developers can implement a single-page application on the Telegram
+Mini Apps platform using the following technologies and libraries:
 
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TON Connect](https://docs.ton.org/develop/dapps/ton-connect/overview)
+- [Telegram SDK](https://core.telegram.org/bots/webapps#initializing-mini-apps)
+- [Telegram UI](https://github.com/Telegram-Mini-Apps/TelegramUI)
+- [Vite](https://vitejs.dev/)
 
-## Getting started
+> The template was created using [npm](https://www.npmjs.com/). Therefore, it is required to use
+> it for this project as well. Using other package managers, you will receive a corresponding error.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Install Dependencies
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+If you have just cloned this template, you should install the project dependencies using the
+command:
 
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+```Bash
+npm install
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/adriandev777/tg-front-integration-upwork.git
-git branch -M main
-git push -uf origin main
+
+## Scripts
+
+This project contains the following scripts:
+
+- `dev`. Runs the application in development mode.
+- `build`. Builds the application for production.
+- `lint`. Runs [eslint](https://eslint.org/) to ensure the code quality meets the required
+  standards.
+- `deploy`. Deploys the application to GitHub Pages.
+
+To run a script, use the `npm run` command:
+
+```Bash
+npm run {script}
+# Example: npm run build
 ```
 
-## Integrate with your tools
+## Create Bot and Mini App
 
-- [ ] [Set up project integrations](https://gitlab.com/adriandev777/tg-front-integration-upwork/-/settings/integrations)
+Before you start, make sure you have already created a Telegram Bot. Here is
+a [comprehensive guide](https://docs.telegram-mini-apps.com/platform/creating-new-app) on how to
+do it.
 
-## Collaborate with your team
+## Run
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Although Mini Apps are designed to be opened
+within [Telegram applications](https://docs.telegram-mini-apps.com/platform/about#supported-applications),
+you can still develop and test them outside of Telegram during the development process.
 
-## Test and Deploy
+To run the application in the development mode, use the `dev` script:
 
-Use the built-in continuous integration in GitLab.
+```bash
+npm run dev
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+After this, you will see a similar message in your terminal:
 
-***
+```bash
+VITE v5.2.12  ready in 237 ms
 
-# Editing this README
+➜  Local:   http://localhost:5173/reactjs-tsdk-template
+➜  Network: http://172.18.16.1:5173/reactjs-tsdk-template
+➜  Network: http://172.19.32.1:5173/reactjs-tsdk-template
+➜  Network: http://192.168.0.171:5173/reactjs-tsdk-template
+➜  press h + enter to show help
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Here, you can see the `Local` link, available locally, and `Network` links accessible to all
+devices in the same network with the current device.
 
-## Suggestions for a good README
+To view the application, you need to open the `Local`
+link (`http://localhost:5173/reactjs-tsdk-template` in this example) in your browser:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+![Application](assets/application.png)
 
-## Name
-Choose a self-explaining name for your project.
+### Run Inside Telegram
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Although it is possible to run the application outside of Telegram, it is recommended to develop it
+within Telegram for the most accurate representation of its real-world functionality.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+To run the application inside Telegram, [@BotFather](https://t.me/botfather) requires an HTTPS link.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+This template already provides a solution.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Navigate to the `vite.config.ts` file and uncomment the usage of the `basicSsl` function. This
+function utilizes
+the [@vitejs/plugin-basic-ssl](https://www.npmjs.com/package/@vitejs/plugin-basic-ssl) plugin, which
+enables the creation of an HTTPS link. Note that this plugin generates a self-signed certificate,
+which browsers will recognize as unsafe, resulting in a warning when accessing the app.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+After uncommenting the function, run the `dev` script again and observe the output in your terminal:
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+```bash
+VITE v5.2.12  ready in 265 ms
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+➜  Local:   https://localhost:5173/reactjs-tsdk-template
+➜  Network: https://172.18.16.1:5173/reactjs-tsdk-template
+➜  Network: https://172.19.32.1:5173/reactjs-tsdk-template
+➜  Network: https://192.168.0.171:5173/reactjs-tsdk-template
+➜  press h + enter to show help
+```
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Visiting the `Local` link (`https://localhost:5173/reactjs-tsdk-template` in this example) in your
+browser, you will see the following warning:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+![SSL Warning](assets/ssl-warning.png)
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+This browser warning is normal and can be safely ignored as long as the site is secure. Click
+the `Proceed to localhost (unsafe)` button to continue and view the application.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Once the application is displayed correctly, submit one of the `Network` links as the Mini App link
+to [@BotFather](https://t.me/botfather). Then, navigate
+to [https://web.telegram.org/k/](https://web.telegram.org/k/), find your bot, and launch the
+Telegram Mini App. This approach provides the full development experience.
 
-## License
-For open source projects, say how it is licensed.
+> **Important**
+>
+> Because we are using self-signed SSL certificates, the Android and iOS Telegram applications will
+> not be able to display the application. These operating systems enforce stricter security
+> measures, preventing the Mini App from loading. To address this issue, refer
+> to [this guide](https://docs.telegram-mini-apps.com/platform/getting-app-link#remote).
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Deploy
+
+This boilerplate uses GitHub Pages as the way to host the application externally. GitHub Pages
+provides a CDN which will let your users receive the application rapidly. Alternatively, you could
+use such services as [Heroku](https://www.heroku.com/) or [Vercel](https://vercel.com).
+
+### Manual Deployment
+
+This boilerplate uses the [gh-pages](https://www.npmjs.com/package/gh-pages) tool, which allows
+deploying your application right from your PC.
+
+#### Configuring
+
+Before running the deployment process, ensure that you have done the following:
+
+1. Replaced the `homepage` value in `package.json`. The GitHub Pages deploy tool uses this value to
+   determine the related GitHub project.
+2. Replaced the `base` value in `vite.config.ts` and have set it to the name of your GitHub
+   repository. Vite will use this value when creating paths to static assets.
+
+For instance, if your GitHub username is `telegram-mini-apps` and the repository name
+is `is-awesome`, the value in the `homepage` field should be the following:
+
+```json
+{
+  "homepage": "https://telegram-mini-apps.github.io/is-awesome"
+}
+```
+
+And `vite.config.ts` should have this content:
+
+```ts
+export default defineConfig({
+  base: '/is-awesome/',
+  // ...
+});
+```
+
+You can find more information on configuring the deployment in the `gh-pages`
+[docs](https://github.com/tschaub/gh-pages?tab=readme-ov-file#github-pages-project-sites).
+
+#### Before Deploying
+
+Before deploying the application, make sure that you've built it and going to deploy the fresh
+static files:
+
+```bash
+npm run build
+```
+
+Then, run the deployment process, using the `deploy` script:
+
+```Bash
+npm run deploy
+```
+
+After the deployment completed successfully, visit the page with data according to your
+username and repository name. Here is the page link example using the data mentioned above:
+https://telegram-mini-apps.github.io/is-awesome
+
+### GitHub Workflow
+
+To simplify the deployment process, this template includes a
+pre-configured [GitHub workflow](.github/workflows/github-pages-deploy.yml) that automatically
+deploys the project when changes are pushed to the `master` branch.
+
+To enable this workflow, create a new environment (or edit the existing one) in the GitHub
+repository settings and name it `github-pages`. Then, add the `master` branch to the list of
+deployment branches.
+
+You can find the environment settings using this
+URL: `https://github.com/{username}/{repository}/settings/environments`.
+
+![img.png](.github/deployment-branches.png)
+
+In case, you don't want to do it automatically, or you don't use GitHub as the project codebase,
+remove the `.github` directory.
+
+### GitHub Web Interface
+
+Alternatively, developers can configure automatic deployment using the GitHub web interface. To do
+this, follow the link: `https://github.com/{username}/{repository}/settings/pages`.
+
+## TON Connect
+
+This boilerplate utilizes the [TON Connect](https://docs.ton.org/develop/dapps/ton-connect/overview)
+project to demonstrate how developers can integrate functionality related to TON cryptocurrency.
+
+The TON Connect manifest used in this boilerplate is stored in the `public` folder, where all
+publicly accessible static files are located. Remember
+to [configure](https://docs.ton.org/develop/dapps/ton-connect/manifest) this file according to your
+project's information.
+
+## Useful Links
+
+- [Platform documentation](https://docs.telegram-mini-apps.com/)
+- [Telegram developers community chat](https://t.me/devs)
