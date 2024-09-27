@@ -27,7 +27,7 @@ export const HomePage: FC = () => {
   const location = useLocation()
   const userData = location.state
 
-  alert(userData)
+  alert(userData.user)
   const TOTAL_CLICKS_NEEDED = 20;
   const CIRCLE_RADIUS = 100;
   const CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;

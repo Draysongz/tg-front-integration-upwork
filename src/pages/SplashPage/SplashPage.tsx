@@ -9,30 +9,30 @@ import { useUserLogin } from '@/hooks/useLoginUser';
 
 export const SplashPage: FC = () => {
     const navigate = useNavigate();
-    // const [number, setNumber] = useState(0);
+    const [number, setNumber] = useState(0);
     const [hash, setHash] = useState('')
 
-    // useEffect(() => {
-    //     const duration = 4500; // total time to reach 100 in milliseconds
-    //     const steps = 100; // total steps to reach 100
-    //     const interval = duration / steps; // interval time per step
+    useEffect(() => {
+        const duration = 4500; // total time to reach 100 in milliseconds
+        const steps = 100; // total steps to reach 100
+        const interval = duration / steps; // interval time per step
 
-    //     let currentNumber = 0;
+        let currentNumber = 0;
 
-    //     const incrementNumber = () => {
-    //         if (currentNumber < 100) {
-    //             currentNumber += 1;
-    //             setNumber(currentNumber);
-    //         }
-    //     };
+        const incrementNumber = () => {
+            if (currentNumber < 100) {
+                currentNumber += 1;
+                setNumber(currentNumber);
+            }
+        };
 
-    //     const timer = setInterval(incrementNumber, interval);
+        const timer = setInterval(incrementNumber, interval);
 
-    //     // Cleanup the interval when the component unmounts or the effect is rerun
-    //     return () => clearInterval(timer);
-    // }, []);
+        // Cleanup the interval when the component unmounts or the effect is rerun
+        return () => clearInterval(timer);
+    }, []);
 
-           const {userData, error, loading} = useUserLogin(hash)
+           const {userData} = useUserLogin(hash)
             
 
     // useEffect(() => {
@@ -47,7 +47,7 @@ export const SplashPage: FC = () => {
        setHash(userHash)
     }, [])
 
-    if(!loading && !error && userData != null){
+    if(userData.msg === "Success"){
         navigate("/home", {state: userData})
     }
 
@@ -64,7 +64,7 @@ export const SplashPage: FC = () => {
                         </div>
                         <div className='position-relative w-100 splash-progress'>
                             <div style={{ width: 80, height: 80 }} className='mx-auto mb-3'>
-                                <CircularProgressbar value={10} text={`10%`} />
+                                <CircularProgressbar value={number} text={`${number}%`} />
                             </div>
                             <div className='text-center loading-title text-white'>Loading</div>
                         </div>
