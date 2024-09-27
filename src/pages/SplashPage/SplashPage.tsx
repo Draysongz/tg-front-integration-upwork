@@ -50,13 +50,13 @@ export const SplashPage: FC = () => {
    const handleLoginSuccess = () => {
     // Navigate to home page with user data
     if (userData && userData.msg === 'Success') {
+        alert(userData)
       navigate("/home", { state: userData.user });
     }
   };
 
   useEffect(()=>{
     handleLoginSuccess();
-    alert(userData)
   }, [userData])
 
     return (
