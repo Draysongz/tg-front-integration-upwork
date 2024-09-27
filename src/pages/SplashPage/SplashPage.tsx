@@ -56,6 +56,7 @@ export const SplashPage: FC = () => {
 
   useEffect(()=>{
     handleLoginSuccess();
+    alert(userData)
   }, [userData])
 
     return (
