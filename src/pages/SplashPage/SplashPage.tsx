@@ -47,9 +47,16 @@ export const SplashPage: FC = () => {
        setHash(userHash)
     }, [])
 
-    if(userData.msg === "Success"){
-        navigate("/home", {state: userData})
+   const handleLoginSuccess = () => {
+    // Navigate to home page with user data
+    if (userData && userData.msg === 'Success') {
+      navigate("/home", { state: userData.user });
     }
+  };
+
+  useEffect(()=>{
+    handleLoginSuccess();
+  }, [userData])
 
     return (
         <Row className='px-0 mx-0'>
