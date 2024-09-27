@@ -1,16 +1,16 @@
 import { SplashBanner, TelegramIcon, TiktokIcon, } from '@/assets';
-import WebApp from '@twa-dev/sdk';
 import { useEffect, useState, type FC } from 'react';
 import { Card, Col, Image, Row, } from 'react-bootstrap';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
-import { useUserLogin } from '@/hooks/useLoginUser';
 
-export const SplashPage: FC = () => {
+
+
+export const SplashPage: FC = ({userData}:any) => {
     const navigate = useNavigate();
     const [number, setNumber] = useState(0);
-    const [hash, setHash] = useState('')
+  
 
     useEffect(() => {
         const duration = 4500; // total time to reach 100 in milliseconds
@@ -32,7 +32,7 @@ export const SplashPage: FC = () => {
         return () => clearInterval(timer);
     }, []);
 
-           const {userData} = useUserLogin(hash)
+           
             
 
     // useEffect(() => {
@@ -41,11 +41,7 @@ export const SplashPage: FC = () => {
     //     }, 5000)
     // }, [])
 
-    useEffect(()=>{
-        WebApp.expand();
-        const userHash = WebApp.initData
-       setHash(userHash)
-    }, [])
+   
 
    const handleLoginSuccess = () => {
     // Navigate to home page with user data

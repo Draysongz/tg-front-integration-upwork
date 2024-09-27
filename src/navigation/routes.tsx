@@ -12,7 +12,7 @@ import { DailyCheckPage } from '@/pages/HomePage/DailyCheck';
 
 interface Route {
   path: string;
-  Component: ComponentType;
+  Component: ComponentType<any>;  // Accept props like userData
   title?: string;
   icon?: JSX.Element;
 }
@@ -50,9 +50,10 @@ export const routes: Route[] = [
   },
 ];
 
+// HomeMenuItems
 export const HomeMenuItems = [
-  { icon: DailyLoginIcon, title: 'Daily Login', action: console.log("Daily Login")},
-  {icon: ComboIcon, title: 'Combo', action: console.log("Combo")},
-  { icon: DailyWordIcon, title: 'Daily Word', action: console.log("Daily Word")},
-  { path: '/roullete', icon: RoulleteIcon, title: 'Roullete'},
+  { icon: DailyLoginIcon, title: 'Daily Login', action: () => console.log("Daily Login") },
+  { icon: ComboIcon, title: 'Combo', action: () => console.log("Combo") },
+  { icon: DailyWordIcon, title: 'Daily Word', action: () => console.log("Daily Word") },
+  { path: '/roullete', icon: RoulleteIcon, title: 'Roullete' },
 ];
