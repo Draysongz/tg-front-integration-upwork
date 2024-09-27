@@ -47,7 +47,7 @@ export const SplashPage: FC = () => {
        setHash(userHash)
     }, [])
 
-    if(!loading && !error){
+    if(!loading && !error && userData != null){
         navigate("/home", {state: userData})
     }
 
