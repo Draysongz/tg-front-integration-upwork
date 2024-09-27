@@ -9,7 +9,7 @@ import { useUserLogin } from '@/hooks/useLoginUser';
 
 export const SplashPage: FC = () => {
     const navigate = useNavigate();
-    const [number, setNumber] = useState(0);
+    // const [number, setNumber] = useState(0);
     const [hash, setHash] = useState('')
 
     // useEffect(() => {
@@ -64,7 +64,7 @@ export const SplashPage: FC = () => {
                         </div>
                         <div className='position-relative w-100 splash-progress'>
                             <div style={{ width: 80, height: 80 }} className='mx-auto mb-3'>
-                                <CircularProgressbar value={number} text={`${number}%`} />
+                                <CircularProgressbar value={10} text={`10%`} />
                             </div>
                             <div className='text-center loading-title text-white'>Loading</div>
                         </div>
