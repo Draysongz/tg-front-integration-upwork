@@ -12,6 +12,7 @@ import { Footer } from '@/components/layout/Footer';
 import { FC, useState, useEffect, useRef } from 'react';
 import { Col, Container, Image, Row, Navbar } from 'react-bootstrap';
 import { ShowAdButton } from '@/components/ShowAdButton';
+import { useLocation } from 'react-router-dom';
 
 export const HomePage: FC = () => {
  
@@ -23,6 +24,8 @@ export const HomePage: FC = () => {
   const [effects, setEffects] = useState<{ x: number; y: number; id: number }[]>([]);
   const [collectedCoins, setCollectedCoins] = useState(0); // Track collected coins
   const mainIconRef = useRef<HTMLImageElement>(null);
+  const location = useLocation()
+  const userData = location.state
 
   const TOTAL_CLICKS_NEEDED = 20;
   const CIRCLE_RADIUS = 100;
@@ -135,7 +138,7 @@ export const HomePage: FC = () => {
               <Col xs={6}>
                 <div className="d-flex align-items-center">
                   <Image src={AvatarImage} width={32} height={32} className="me-2" />
-                  <div className="fw-semibold text-white">Amg_Booster</div>
+                  <div className="fw-semibold text-white">{userData && userData?.user?.username}</div>
                 </div>
               </Col>
               <Col xs={6}>
