@@ -139,7 +139,7 @@ export const HomePage: FC = () => {
               <Col xs={6}>
                 <div className="d-flex align-items-center">
                   <Image src={AvatarImage} width={32} height={32} className="me-2" />
-                  <div className="fw-semibold text-white">{userData && userData?.user?.username}</div>
+                  <div className="fw-semibold text-white">{userData && userData?.username}</div>
                 </div>
               </Col>
               <Col xs={6}>
