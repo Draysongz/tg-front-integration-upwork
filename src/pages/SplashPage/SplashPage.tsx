@@ -46,7 +46,7 @@ export const SplashPage: FC = ({userData}:any) => {
    const handleLoginSuccess = () => {
     // Navigate to home page with user data
     if (userData && userData.msg === 'Success') {
-        alert(JSON.stringify(userData, null, 2))
+        // alert(JSON.stringify(userData, null, 2))
       navigate("/home", { state: userData.user });
     }
   };
