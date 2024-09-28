@@ -27,6 +27,7 @@ export const HomePage: FC = ({userData}: any) => {
   const mainIconRef = useRef<HTMLImageElement>(null);
   const location = useLocation()
   const userDeets = location.state
+  console.log(userData)
 
   
   const TOTAL_CLICKS_NEEDED = 20;
