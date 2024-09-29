@@ -7,7 +7,34 @@ import { type FC } from 'react';
 import { Button, Card, Col, Container, Image, Navbar, Row } from 'react-bootstrap';
 import { DailyLoginIcon } from '@/assets';
 
-export const FriendPage: FC = () => {
+interface FriendPageProps {
+  userData: {
+    user: {
+ first_name: string;
+    last_name: string;
+    username: string;
+    balance: number;
+    country: string;
+    dailyCheckIn: {
+      streak: number;
+      lastCheckInDate: string;
+      lastClaimDate: string | null;
+    };
+    referralCode: string;
+    totalReferralEarnings: number;
+    }
+   
+    // Add more fields as necessary
+  };
+}
+
+export const FriendPage: FC<FriendPageProps> = ({ userData }) => {
+
+    console.log(userData)
+
+    const copyLink = async()=>{
+        navigator.clipboard.writeText(`https://t.me/spinnertonbot?start=${userData?.user.referralCode}`)
+    }
 
     return (
         <Row className='px-0 mx-0'>
@@ -85,7 +112,7 @@ export const FriendPage: FC = () => {
                     </section>
                     <Navbar sticky="bottom" >
                         <Container className='w-100'>
-                            <Row className='mb-5 w-100 mx-auto'>
+                            <Row className='mb-5 w-100 mx-auto' onClick={copyLink}>
                                 <Col xs={9} className='mb-5 px-0'><Button className='w-100 main-button py-3 rounded-4 fw-medium text-uppercase mb-2'>Invite friend</Button></Col>
                                 <Col xs={3} className='mb-5 pe-0'><Button className='w-100 main-button py-3 rounded-4 fw-medium text-uppercase mb-2'><DocumentCopy variant="Bold" className='text-white' /></Button></Col>
                             </Row>
