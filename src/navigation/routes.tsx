@@ -1,34 +1,43 @@
-import type { ComponentType, JSX } from 'react';
+import type { ComponentType, JSX } from "react";
 
-import { LaunchParamsPage } from '@/pages/LaunchParamsPage/LaunchParamsPage.tsx';
-import { TONConnectPage } from '@/pages/TONConnectPage/TONConnectPage';
-import { HomePage } from '@/pages/HomePage/HomePage';
-import { RoulletePage } from '@/pages/HomePage/Roullete/Index';
-import { FriendPage } from '@/pages/FriendPage/FriendPage';
-import { EarnPage } from '@/pages/EarnPage/EarnPage';
-import { ComboIcon, DailyLoginIcon, DailyWordIcon, RoulleteIcon } from '@/assets';
-import { SplashPage } from '@/pages/SplashPage/SplashPage';
-import { DailyCheckPage } from '@/pages/HomePage/DailyCheck';
+import { LaunchParamsPage } from "@/pages/LaunchParamsPage/LaunchParamsPage.tsx";
+import { TONConnectPage } from "@/pages/TONConnectPage/TONConnectPage";
+import { HomePage } from "@/pages/HomePage/HomePage";
+import { RoulletePage } from "@/pages/HomePage/Roullete/Index";
+import { FriendPage } from "@/pages/FriendPage/FriendPage";
+import { EarnPage } from "@/pages/EarnPage/EarnPage";
+import {
+  ComboIcon,
+  DailyLoginIcon,
+  DailyWordIcon,
+  RoulleteIcon,
+} from "@/assets";
+import { SplashPage } from "@/pages/SplashPage/SplashPage";
+import { DailyCheckPage } from "@/pages/HomePage/DailyCheck";
 
 interface Route {
   path: string;
-  Component: ComponentType<any>;  // Accept props like userData
+  Component: ComponentType<any>; // Accept props like userData
   title?: string;
   icon?: JSX.Element;
 }
 
 export const routes: Route[] = [
-  { path: '/home', Component: HomePage },
-  { path: '/roullete', Component: RoulletePage, title: 'Roullete' },
-  { path: '/daily', Component: DailyCheckPage, title: 'DailyCheck' },
-  { path: '/friends', Component: FriendPage, title: 'Friend' },
-  { path: '/earn', Component: EarnPage, title: 'Earn' },
-  { path: '/', Component: SplashPage, title: 'Splash' },
-  { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' },
+  { path: "/home", Component: HomePage },
+  { path: "/roullete", Component: RoulletePage, title: "Roullete" },
+  { path: "/daily", Component: DailyCheckPage, title: "DailyCheck" },
+  { path: "/friends", Component: FriendPage, title: "Friend" },
+  { path: "/earn", Component: EarnPage, title: "Earn" },
+  { path: "/", Component: SplashPage, title: "Splash" },
   {
-    path: '/wallet',
+    path: "/launch-params",
+    Component: LaunchParamsPage,
+    title: "Launch Params",
+  },
+  {
+    path: "/wallet",
     Component: TONConnectPage,
-    title: 'TON Connect',
+    title: "TON Connect",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -52,8 +61,16 @@ export const routes: Route[] = [
 
 // HomeMenuItems
 export const HomeMenuItems = [
-  { icon: DailyLoginIcon, title: 'Daily Login', action: () => console.log("Daily Login") },
-  { icon: ComboIcon, title: 'Combo', action: () => console.log("Combo") },
-  { icon: DailyWordIcon, title: 'Daily Word', action: () => console.log("Daily Word") },
-  { path: '/roullete', icon: RoulleteIcon, title: 'Roullete' },
+  {
+    icon: DailyLoginIcon,
+    title: "Daily Login",
+    action: () => console.log("Daily Login"),
+  },
+  { icon: ComboIcon, title: "Combo", action: () => console.log("Combo") },
+  {
+    icon: DailyWordIcon,
+    title: "Daily Word",
+    action: () => console.log("Daily Word"),
+  },
+  { path: "/roullete", icon: RoulleteIcon, title: "Roullete" },
 ];
